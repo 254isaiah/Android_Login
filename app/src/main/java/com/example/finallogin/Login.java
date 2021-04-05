@@ -18,7 +18,7 @@ import com.vishnusivadas.advanced_httpurlconnection.PutData;
 public class Login extends AppCompatActivity {
     TextInputEditText textInputEditTextUsername,textInputEditTextPassword;
     Button buttonLogin;
-    TextView textViewSignUp;
+    TextView textViewSignUp,textViewforgotpassword;
     ProgressBar progressBar;
 
     @Override
@@ -31,6 +31,13 @@ public class Login extends AppCompatActivity {
         buttonLogin = findViewById(R.id.buttonLogin);
         textViewSignUp = findViewById(R.id.signUpText);
         progressBar = findViewById(R.id.progress);
+        textViewforgotpassword = findViewById(R.id.textViewforgottenPass);
+        /*textViewforgotpassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Login.this, ForgotpasswordActivity.class));
+            }
+        });*/
 
         textViewSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,7 +75,7 @@ public class Login extends AppCompatActivity {
                             data[0] = username;
                             data[1] = password;
 
-                            PutData putData = new PutData("http://192.168.100.46/loginregister/login.php", "POST", field, data);
+                            PutData putData = new PutData("http://192.168.100.46/waterbilling/login/login_post", "POST", field, data);
                             if (putData.startPut()) {
                                 if (putData.onComplete()) {
                                     progressBar.setVisibility(View.GONE);
@@ -96,4 +103,5 @@ public class Login extends AppCompatActivity {
         });
 
     }
+
 }

@@ -14,7 +14,6 @@
         android:fontFamily="@font/poppinsbold"
         android:gravity="center"
         android:text="@string/login"
-        android:textColor="@color/colorAccent"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -49,7 +48,8 @@
                 android:drawableEnd="@drawable/ic_user"
                 android:fontFamily="@font/poppinsmedium"
                 android:inputType="text"
-                tools:targetApi="jelly_bean" />
+                tools:targetApi="jelly_bean"
+                android:drawableRight="@drawable/ic_user" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -69,7 +69,8 @@
                 android:drawableEnd="@drawable/ic_pass"
                 android:fontFamily="@font/poppinsmedium"
                 android:inputType="textPassword"
-                tools:targetApi="jelly_bean" />
+                tools:targetApi="jelly_bean"
+                android:drawableRight="@drawable/ic_pass" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <ProgressBar
@@ -91,17 +92,29 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/progress" />
+        <TextView
+            android:id="@+id/textViewforgottenPass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/poppinsmedium"
+            android:text="Forgot Password?"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonLogin"
+            tools:targetApi="jelly_bean" />
+
 
         <TextView
             android:id="@+id/signUpText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="10dp"
             android:fontFamily="@font/poppinsmedium"
             android:text="@string/new_here_sign_up"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/buttonLogin"
+            app:layout_constraintTop_toBottomOf="@+id/textViewforgottenPass"
             tools:targetApi="jelly_bean" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
